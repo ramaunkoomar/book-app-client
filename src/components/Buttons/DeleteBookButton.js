@@ -1,6 +1,6 @@
 import { Button } from 'antd'
 import React from 'react'
-import booksService from '../../services/booksService'
+import booksService from '../../services/bookService'
 
 const DeleteBookButton = ({ isbn, setBooks, books }) => {
 
