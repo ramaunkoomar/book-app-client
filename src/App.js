@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.less'
 import BookTable from './components/Screens/BookTable'
 import CreateNewBook from './components/Screens/CreateNewBook';
+import EditBook from './components/Screens/EditBook';
 
 import {
   BrowserRouter as Router,
@@ -18,6 +19,9 @@ const App = () => {
         </Route>
         <Route exact path='/books/create'>
           <CreateNewBook books={books} setBooks={setBooks} />
+        </Route>
+        <Route exact path='/books/edit/:isbn'>
+          <EditBook />
         </Route>
       </Switch>
     </Router>
