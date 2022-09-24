@@ -1,11 +1,12 @@
 import { axiosInstance } from '../config/config'
+
 /**
  * Retrieves all the books.
  * @returns the books retrieved.
  */
 const getAll = () => {
-    const request = axiosInstance.get()
-    return request.then(response => response.data)
+    const request = axiosInstance.get();
+    return request.then(response => response.data);
 }
 
 /**
@@ -14,8 +15,8 @@ const getAll = () => {
  * @returns the book with the matching ISBN.
  */
 const getBook = (isbn) => {
-    const request = axiosInstance.get(`/${isbn}`)
-    return request.then(response => response.data)
+    const request = axiosInstance.get(`/${isbn}`);
+    return request.then(response => response.data);
 }
 
 /**
@@ -24,8 +25,8 @@ const getBook = (isbn) => {
  * @returns 
  */
 const remove = (isbn) => {
-    const request = axiosInstance.delete(`/${isbn}`)
-    return request
+    const request = axiosInstance.delete(`/${isbn}`);
+    return request;
 }
 
 /**
@@ -34,8 +35,8 @@ const remove = (isbn) => {
  * @returns 
  */
 const create = (newBook) => {
-    const request = axiosInstance.post(newBook)
-    return request.then(response => response.data)
+    const request = axiosInstance.post(process.env.REACT_APP_SERVER_URL, newBook);
+    return request.then(response => response.data);
 }
 
 /**
@@ -45,8 +46,8 @@ const create = (newBook) => {
  * @returns 
  */
 const update = (isbn, updatedBook) => {
-    const request = axiosInstance.put(`/${isbn}`, updatedBook)
-    return request.then(response => response.data)
+    const request = axiosInstance.put(`/${isbn}`, updatedBook);
+    return request.then(response => response.data);
 }
 
 
